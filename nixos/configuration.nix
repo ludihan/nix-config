@@ -39,6 +39,7 @@
         enableDefaultPackages = true;
         packages = with pkgs; [
             iosevka
+            noto-fonts
         ];
     };
 
@@ -47,7 +48,10 @@
     in {
         settings = {
             # Enable flakes and new 'nix' command
-            experimental-features = "nix-command flakes";
+            experimental-features = [
+                "nix-command" 
+                "flakes"
+            ];
             # Opinionated: disable global registry
             flake-registry = "";
             # Workaround for https://github.com/NixOS/nix/issues/9574
@@ -66,8 +70,10 @@
     # Enable networking
     networking.networkmanager.enable = true;
 
+    environment.localBinInPath = true;
+
     # Set your time zone.
-    time.timeZone = "America/Fortaleza";
+    # time.timeZone = "America/Fortaleza";
 
     # Select internationalisation properties.
     i18n.defaultLocale = "en_US.UTF-8";
@@ -83,6 +89,14 @@
         LC_TELEPHONE = "C.UTF-8";
         LC_TIME = "C.UTF-8";
     };
+    i18n.inputMethod = {
+        type = "fcitx5";
+        enable = true;
+        fcitx5.addons = with pkgs; [
+            fcitx5-mozc
+            fcitx5-gtk
+        ];
+    };
 
     # TODO: Configure your system-wide user settings (groups, etc), add more users as needed.
     users.users.ludihan = {
@@ -94,21 +108,33 @@
             "video"
             "docker"
         ];
-        shell = pkgs.nushell;
     };
 
-    services.displayManager.ly = {
+    services = {
+        displayManager.ly = {
+            enable = true;
+        };
+        pipewire = {
+            enable = true;
+            alsa.enable = true;
+            alsa.support32Bit = true;
+            pulse.enable = true;
+            jack.enable = true;
+        };
+        automatic-timezoned.enable = true;
+    };
+    services.gvfs.enable = true;
+
+
+    programs.nix-ld.enable = true;
+    xdg.portal = {
         enable = true;
     };
 
-    services.pipewire = {
-        enable = true;
-        alsa.enable = true;
-        alsa.support32Bit = true;
-        pulse.enable = true;
-        jack.enable = true;
-    };
+    # not present in home manager
+    programs.niri.enable = true;
 
+    # theme option does not exist in home manager
     programs.foot = {
         enable = true;
         theme = "gruvbox";
@@ -117,6 +143,16 @@
             resize-by-cells=false;
         };
     };
+    programs.thunar = {
+        enable = true;
+        plugins = with pkgs.xfce; [
+            thunar-archive-plugin
+            thunar-media-tags-plugin
+            thunar-volman
+        ];
+    };
+    programs.xfconf.enable = true;
+
 
     virtualisation.docker = {
         enable = true;
