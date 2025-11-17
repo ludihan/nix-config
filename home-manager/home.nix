@@ -142,6 +142,7 @@ in
         docker-compose
         docker-buildx
         hyprpicker
+        spotify
         brightnessctl
         imv
         inxi
