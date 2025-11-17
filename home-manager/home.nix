@@ -70,9 +70,9 @@ in
             VISUAL = "nvim";
         };
         initExtra = ''
-            export PATH = $PATH:$HOME/.local/bin
-            export PATH = $PATH:$CARGO_HOME/bin
-            export PATH = $PATH:$GOPATH/bin
+            export PATH=$PATH:$HOME/.local/bin
+            export PATH=$PATH:$CARGO_HOME/bin
+            export PATH=$PATH:$GOPATH/bin
         '';
     };
 
@@ -377,7 +377,7 @@ in
     };
 
     # Nicely reload system units when changing configs
-    systemd.user.startServices = "sd-switch";
+    # systemd.user.startServices = "sd-switch";
 
     # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
     home.stateVersion = "25.05";
