@@ -177,6 +177,7 @@ in
         gst_all_1.gst-plugins-good
         gst_all_1.gst-plugins-bad
         quickshell
+        nixfmt
     ];
 
     programs.firefox.enable = true;
