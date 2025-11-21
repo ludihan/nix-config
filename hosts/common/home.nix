@@ -145,7 +145,6 @@ in
         uv
         blender
         vivid
-        firefox
         steam
         osu-lazer-bin
         docker-compose
@@ -179,6 +178,8 @@ in
         gst_all_1.gst-plugins-bad
         quickshell
     ];
+
+    programs.firefox.enable = true;
 
     programs.neovim = {
         enable = true;
