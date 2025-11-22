@@ -408,7 +408,7 @@ in
 
   xdg.configFile =
     let
-      link = name: config.lib.file.mkOutOfStoreSymlink "${inputs.self}/config/${name}";
+      link = name: config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.nix-config/config/${name}";
     in
     {
       nvim.source = link "nvim";
