@@ -141,6 +141,10 @@
   security.polkit.enable = true;
   services.gvfs.enable = true;
 
+  programs.nautilus-open-any-terminal.enable = true;
+  programs.nautilus-open-any-terminal.terminal = "foot";
+  services.gnome.sushi.enable = true;
+
   programs.nix-ld.enable = true;
 
   # not present in home manager
@@ -155,8 +159,11 @@
     };
   };
 
-  environment.etc."xdg/menus/applications.menu".source = "${pkgs.kdePackages.plasma-workspace}/etc/xdg/menus/plasma-applications.menu";
   xdg.menus.enable = true;
+  xdg.portal = {
+    enable = true;
+    xdgOpenUsePortal = true;
+  };
 
   programs.appimage = {
     enable = true;

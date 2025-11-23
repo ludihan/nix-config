@@ -149,8 +149,8 @@
         Mod+Shift+D hotkey-overlay-title="Open Web Browser: firefox" {
             spawn "firefox";
         }
-        Mod+E hotkey-overlay-title="Open File Manager: dolphin" {
-            spawn "dolphin";
+        Mod+E hotkey-overlay-title="Open File Manager: nautilus" {
+            spawn "nautilus";
         }
         Mod+Shift+S hotkey-overlay-title="Run an Application: pavucontrol" {
             spawn "pavucontrol";
@@ -352,7 +352,7 @@
             spawn-sh "foot -a floating micro";
         }
         Mod+B {
-            spawn-sh "~/.local/share/cargo/bin/woomer";
+            spawn-sh "woomer";
         }
     }
 

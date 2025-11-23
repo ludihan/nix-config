@@ -161,10 +161,9 @@
     brightnessctl
     imv
     inxi
-    kdePackages.kate
-    kdePackages.kdenlive
-    kdePackages.okular
-    kdePackages.dolphin
+    papers
+    gnome-text-editor
+    nautilus
     krita
     love
     mednafen
@@ -179,6 +178,7 @@
     sunvox
     tuxpaint
     aseprite
+    woomer
     xwayland-satellite
     gst_all_1.gst-plugins-good
     gst_all_1.gst-plugins-bad
@@ -478,11 +478,6 @@
     enable = true;
     desktop = null;
     publicShare = null;
-    templates = null;
-  };
-  xdg.portal = {
-    enable = true;
-    xdgOpenUsePortal = true;
   };
   xdg.mime.enable = true;
 
