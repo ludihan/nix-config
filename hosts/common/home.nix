@@ -164,8 +164,10 @@ in
     imv
     inxi
     kdePackages.kate
-    krita
     kdePackages.kdenlive
+    kdePackages.okular
+    kdePackages.dolphin
+    krita
     love
     mednafen
     swaybg
@@ -177,8 +179,6 @@ in
     unrar
     zip
     sunvox
-    nautilus
-    papers
     tuxpaint
     aseprite
     xwayland-satellite

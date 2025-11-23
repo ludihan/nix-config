@@ -149,8 +149,8 @@
         Mod+Shift+D hotkey-overlay-title="Open Web Browser: firefox" {
             spawn "firefox";
         }
-        Mod+E hotkey-overlay-title="Open File Manager: nautilus" {
-            spawn "nautilus";
+        Mod+E hotkey-overlay-title="Open File Manager: dolphin" {
+            spawn "dolphin";
         }
         Mod+Shift+S hotkey-overlay-title="Run an Application: pavucontrol" {
             spawn "pavucontrol";

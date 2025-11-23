@@ -151,11 +151,6 @@
   programs.niri.enable = true;
   programs.xwayland.enable = true;
 
-  programs = {
-    nautilus-open-any-terminal.enable = true;
-    nautilus-open-any-terminal.terminal = "foot";
-  };
-
   # theme option does not exist in home manager
   programs.foot = {
     enable = true;
