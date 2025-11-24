@@ -200,6 +200,7 @@
     nixfmt
     nix-output-monitor
     nvd
+    wf-recorder
   ];
 
   programs.firefox.enable = true;
