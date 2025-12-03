@@ -3,15 +3,26 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    templates.url = "github:nixos/templates";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    templates.url = "github:nixos/templates";
+    nix-index-database = {
+      url = "github:nix-community/nix-index-database";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
-    inputs@{ nixpkgs, home-manager, ... }:
+    inputs@{
+      self,
+      nixpkgs,
+      templates,
+      home-manager,
+      nix-index-database,
+      ...
+    }:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
@@ -50,6 +61,8 @@
 
           modules = [
             ./hosts/desktop/home.nix
+            nix-index-database.homeModules.nix-index
+            { programs.nix-index-database.comma.enable = true; }
           ];
         };
         "ludihan@nixos-laptop" = home-manager.lib.homeManagerConfiguration {
@@ -59,9 +72,11 @@
 
           modules = [
             ./hosts/laptop/home.nix
+            nix-index-database.homeModules.nix-index
+            { programs.nix-index-database.comma.enable = true; }
           ];
         };
       };
-      inherit (inputs) templates;
+      inherit templates;
     };
 }
