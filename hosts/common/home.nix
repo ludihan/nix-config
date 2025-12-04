@@ -213,6 +213,7 @@
     cmus
     kew
     nicotine-plus
+    ncdu
   ];
 
   programs.firefox.enable = true;
