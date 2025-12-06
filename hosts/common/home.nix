@@ -168,7 +168,6 @@
     uv
     blender
     vivid
-    steam
     osu-lazer-bin
     docker-compose
     docker-buildx
@@ -214,6 +213,7 @@
     kew
     nicotine-plus
     ncdu
+    mangohud
   ];
 
   programs.firefox.enable = true;
