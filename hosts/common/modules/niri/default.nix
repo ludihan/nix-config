@@ -305,7 +305,7 @@
         Mod+Ctrl+8 { move-window-to-workspace 8; }
         Mod+Ctrl+9 { move-window-to-workspace 9; }
 
-        Mod+grave { focus-workspace-previous; }
+        // Mod+grave { focus-workspace-previous; }
 
         Mod+Comma  { consume-window-into-column; }
         Mod+Period { expel-window-from-column; }
