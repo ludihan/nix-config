@@ -191,7 +191,6 @@
     unzip
     unrar
     zip
-    sunvox
     tuxpaint
     aseprite
     woomer
