@@ -20,6 +20,26 @@
         "type": "github"
       }
     },
+    "musnix": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1764554060,
+        "narHash": "sha256-vewrwjGqublgja1bvlIybRnlltKHLNlnP7WYDg+9h1Y=",
+        "owner": "musnix",
+        "repo": "musnix",
+        "rev": "599562080b2901046829ca69e0d1461041d27b32",
+        "type": "github"
+      },
+      "original": {
+        "owner": "musnix",
+        "repo": "musnix",
+        "type": "github"
+      }
+    },
     "nix-index-database": {
       "inputs": {
         "nixpkgs": [
@@ -59,6 +79,7 @@
     "root": {
       "inputs": {
         "home-manager": "home-manager",
+        "musnix": "musnix",
         "nix-index-database": "nix-index-database",
         "nixpkgs": "nixpkgs",
         "templates": "templates",
