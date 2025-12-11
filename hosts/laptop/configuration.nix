@@ -7,7 +7,7 @@
 }:
 {
   imports = [
-    ../common
+    ../common/configuration.nix
     ./hardware-configuration.nix
   ];
   console.keyMap = "br-abnt2";

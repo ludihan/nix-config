@@ -15,6 +15,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    musnix = {
+      url = "github:musnix/musnix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     todo = {
       url = "github:ludihan/todo";
       flake = false;
@@ -50,13 +55,14 @@
           specialArgs = { inherit inputs; };
           modules = [
             hostPath
+            inputs.musnix.nixosModules.musnix
           ];
         };
     in
     {
       nixosConfigurations = {
-        "nixos-desktop" = noBase ./hosts/desktop;
-        "nixos-laptop" = noBase ./hosts/laptop;
+        "nixos-desktop" = noBase ./hosts/desktop/configuration.nix;
+        "nixos-laptop" = noBase ./hosts/laptop/configuration.nix;
       };
 
       homeConfigurations = {

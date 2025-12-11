@@ -210,6 +210,7 @@
     wl-mirror
     reaper
     vital
+    dexed
     cmus
     kew
     nicotine-plus
