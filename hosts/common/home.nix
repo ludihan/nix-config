@@ -36,9 +36,10 @@
     };
   };
 
-  xdg.enable = true;
-  programs.bash = {
-    enable = true;
+  home = {
+    username = "ludihan";
+    homeDirectory = "/home/ludihan";
+    preferXdgDirectories = true;
     sessionVariables =
       let
         data = d: "${config.home.homeDirectory}/.local/share/${d}";
@@ -71,6 +72,10 @@
         EDITOR = "nvim";
         VISUAL = "nvim";
       };
+  };
+
+  programs.bash = {
+    enable = true;
     initExtra = ''
       # Provide a nice prompt if the terminal supports it.
       if [ "$TERM" != "dumb" ] || [ -n "$INSIDE_EMACS" ]; then
@@ -106,12 +111,6 @@
     '';
   };
   # programs.carapace.enable = true;
-
-  home = {
-    username = "ludihan";
-    homeDirectory = "/home/ludihan";
-    preferXdgDirectories = true;
-  };
 
   gtk = {
     enable = true;
@@ -216,6 +215,7 @@
     nicotine-plus
     ncdu
     mangohud
+    file
     inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.todo
   ];
 
@@ -507,35 +507,37 @@
     flake = "${config.home.homeDirectory}/.nix-config";
   };
 
-  xdg.configFile =
-    let
-      link =
-        name: config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.nix-config/config/${name}";
-    in
-    {
-      nvim.source = link "nvim";
-      npm.source = link "npm";
-      quickshell.source = link "quickshell";
+  xdg = {
+    enable = true;
+    configFile =
+      let
+        link =
+          name: config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.nix-config/config/${name}";
+      in
+      {
+        nvim.source = link "nvim";
+        npm.source = link "npm";
+        quickshell.source = link "quickshell";
+      };
+    userDirs = {
+      enable = true;
+      createDirectories = true;
+      desktop = null;
+      publicShare = null;
     };
-
-  xdg.userDirs = {
-    enable = true;
-    createDirectories = true;
-    desktop = null;
-    publicShare = null;
-  };
-  xdg.mime.enable = true;
-  xdg.mimeApps = {
-    enable = true;
-    defaultApplications = {
-      "inode/directory" = "org.gnome.Nautilus.desktop";
-      "application/pdf" = "org.gnome.Papers.desktop";
-      "image/jpg" = "imv.desktop";
-      "image/jpeg" = "imv.desktop";
-      "image/png" = "imv.desktop";
-      "image/webp" = "imv.desktop";
-      "text/*" = "org.gnome.TextEditor.desktop";
-      "text/plain" = "org.gnome.TextEditor.desktop";
+    mime.enable = true;
+    mimeApps = {
+      enable = true;
+      defaultApplications = {
+        "inode/directory" = "org.gnome.Nautilus.desktop";
+        "application/pdf" = "org.gnome.Papers.desktop";
+        "image/jpg" = "imv.desktop";
+        "image/jpeg" = "imv.desktop";
+        "image/png" = "imv.desktop";
+        "image/webp" = "imv.desktop";
+        "text/*" = "org.gnome.TextEditor.desktop";
+        "text/plain" = "org.gnome.TextEditor.desktop";
+      };
     };
   };
 
