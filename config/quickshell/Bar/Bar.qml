@@ -101,7 +101,7 @@ Scope {
             }
             required property var modelData
             screen: modelData
-            implicitHeight: 30
+            implicitHeight: 22
 
             anchors {
                 top: true
@@ -117,9 +117,7 @@ Scope {
                     anchors.fill: parent
                     spacing: 15
 
-                    CustomText {
-                        text: Qt.formatDateTime(clock.date, "[hh:mm:ss - yyyy-MM-dd]")
-                    }
+                    Workspaces {}
 
                     Item {
                         Layout.fillWidth: true

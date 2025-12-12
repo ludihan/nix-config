@@ -8,7 +8,7 @@ Singleton {
     readonly property string foreground: "#FFFFFF"
     readonly property string muted: "#777777"
     readonly property string fontFamily: "Iosevka"
-    readonly property int fontPointSize: 11
+    readonly property int fontPointSize: 12
     readonly property string socketPath: Quickshell.env("NIRI_SOCKET")
-    readonly property int iconSize: 22
+    readonly property int iconSize: 18
 }
