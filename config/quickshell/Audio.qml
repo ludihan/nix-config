@@ -2,17 +2,13 @@ import QtQuick
 import QtQuick.Layouts
 import Quickshell
 import Quickshell.Services.Pipewire
-import Quickshell.Widgets
 import Quickshell.Wayland
 
 Scope {
     id: root
 
     PwObjectTracker {
-        objects: [
-            Pipewire.defaultAudioSink,
-            Pipewire.defaultAudioSource
-        ]
+        objects: [Pipewire.defaultAudioSink, Pipewire.defaultAudioSource]
     }
 
     //
@@ -24,13 +20,13 @@ Scope {
         target: Pipewire.defaultAudioSink?.audio
 
         function onVolumeChanged() {
-            root.showVolOsd = true
-            volHideTimer.restart()
+            root.showVolOsd = true;
+            volHideTimer.restart();
         }
 
         function onMuteChanged() {
-            root.showVolOsd = true
-            volHideTimer.restart()
+            root.showVolOsd = true;
+            volHideTimer.restart();
         }
     }
 
@@ -49,13 +45,13 @@ Scope {
         target: Pipewire.defaultAudioSource?.audio
 
         function onVolumeChanged() {
-            root.showMicOsd = true
-            micHideTimer.restart()
+            root.showMicOsd = true;
+            micHideTimer.restart();
         }
 
         function onMuteChanged() {
-            root.showMicOsd = true
-            micHideTimer.restart()
+            root.showMicOsd = true;
+            micHideTimer.restart();
         }
     }
 
