@@ -49,3 +49,4 @@ vim.lsp.enable({ 'vtsls', 'vue_ls' }) -- If using `ts_ls` replace `vtsls` to `ts
 vim.lsp.enable('gopls')
 vim.lsp.enable('nil_ls')
 vim.lsp.enable('rust_analyzer')
+vim.lsp.enable('qmlls')

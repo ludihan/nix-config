@@ -214,6 +214,7 @@
     ncdu
     mangohud
     file
+    kdePackages.qtdeclarative
     inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.todo
   ];
 
