@@ -353,6 +353,10 @@
         }
     }
 
+    animations {
+      off
+    }
+
     /-recent-windows {
         // off
         open-delay-ms 150
