@@ -1,5 +1,6 @@
 import QtQuick
 import QtQuick.Layouts
+import qs
 
 Rectangle {
     Layout.preferredWidth: 1

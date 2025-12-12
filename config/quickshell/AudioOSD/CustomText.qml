@@ -5,5 +5,5 @@ Text {
     id: root
     color: Config.foreground
     font.family: Config.fontFamily
-    font.pointSize: Config.fontPointSize
+    font.pointSize: 16
 }

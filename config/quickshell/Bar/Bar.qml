@@ -3,6 +3,7 @@ import Quickshell
 import QtQuick
 import QtQuick.Layouts
 import Quickshell.Io
+import qs
 
 Scope {
     SystemClock {
@@ -95,6 +96,9 @@ Scope {
         model: Quickshell.screens
         delegate: PanelWindow {
             id: root
+            function percent(label: string, value: int): string {
+                return `${label}: ${String(value).padStart(3, '0')} %`;
+            }
             required property var modelData
             screen: modelData
             implicitHeight: 30
@@ -123,22 +127,24 @@ Scope {
 
                     Tray {}
 
+                    Item {}
+
                     Separator {}
 
                     CustomText {
-                        text: `CPU: ${String(cpuProc.cpuUsage).padStart(3, '0')} %`
+                        text: root.percent("CPU", cpuProc.cpuUsage)
                     }
 
                     Separator {}
 
                     CustomText {
-                        text: `MEM: ${String(memProc.memUsage).padStart(3, '0')} %`
+                        text: root.percent("MEM", memProc.memUsage)
                     }
 
                     Separator {}
 
                     CustomText {
-                        text: `DISK: ${String(diskProc.diskUsage).padStart(3, '0')} %`
+                        text: root.percent("DISK", diskProc.diskUsage)
                     }
 
                     Separator {}
@@ -146,6 +152,8 @@ Scope {
                     CustomText {
                         text: Qt.formatDateTime(clock.date, "hh:mm:ss - yyyy-MM-dd")
                     }
+
+                    Item {}
                 }
             }
         }
