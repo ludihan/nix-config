@@ -216,6 +216,7 @@
     file
     kdePackages.qtdeclarative
     socat
+    foliate
     inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.todo
   ];
 
@@ -530,16 +531,19 @@
     mime.enable = true;
     mimeApps = {
       enable = true;
-      defaultApplications = {
-        "inode/directory" = "org.gnome.Nautilus.desktop";
-        "application/pdf" = "org.gnome.Papers.desktop";
-        "image/jpg" = "imv.desktop";
-        "image/jpeg" = "imv.desktop";
-        "image/png" = "imv.desktop";
-        "image/webp" = "imv.desktop";
-        "text/*" = "org.gnome.TextEditor.desktop";
-        "text/plain" = "org.gnome.TextEditor.desktop";
-      };
+      #defaultApplications = {
+      #"inode/directory" = "org.gnome.Nautilus.desktop";
+      #"application/pdf" = "org.gnome.Papers.desktop";
+      #"application/epub+zip" = "foliate.desktop";
+      #"application/epub" = "foliate.desktop";
+      #"application/mobi" = "foliate.desktop";
+      #"image/jpg" = "imv.desktop";
+      #"image/jpeg" = "imv.desktop";
+      #"image/png" = "imv.desktop";
+      #"image/webp" = "imv.desktop";
+      #"text/*" = "org.gnome.TextEditor.desktop";
+      #"text/plain" = "org.gnome.TextEditor.desktop";
+      #};
     };
   };
 
