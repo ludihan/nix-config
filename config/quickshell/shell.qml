@@ -57,6 +57,7 @@ ShellRoot {
         target: "launcher"
 
         function open() {
+            launcher.item.clear()
             mixer.item.visible = false;
             launcher.item.visible = !launcher.item.visible;
         }
