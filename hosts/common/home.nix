@@ -354,6 +354,8 @@
     '';
   };
 
+  services.easyeffects.enable = true;
+
   programs.obs-studio = {
     enable = true;
 
