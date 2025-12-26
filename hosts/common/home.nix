@@ -404,7 +404,7 @@
     };
     mime.enable = true;
     mimeApps = {
-      enable = true;
+      #enable = true;
       #defaultApplications = {
       #"inode/directory" = "org.gnome.Nautilus.desktop";
       #"application/pdf" = "org.gnome.Papers.desktop";
