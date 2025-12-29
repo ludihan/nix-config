@@ -75,12 +75,6 @@ PanelWindow {
                                 Layout.minimumWidth: 695
                                 text: [mpris.modelData.identity || "Unkown Application", mpris.modelData.trackArtists || "Unknown Artists", mpris.modelData.trackTitle || "Unknown Track", mpris.modelData.trackAlbum || "Unknown Album",].join(" - ")
                             }
-                            Button {
-                                text: "Quit"
-                                font.family: Config.fontFamily
-                                font.pixelSize: 18
-                                onClicked: mpris.modelData.quit()
-                            }
                         }
                         RowLayout {
                             Image {
@@ -89,6 +83,12 @@ PanelWindow {
                                 source: mpris.modelData.trackArtUrl
                             }
                             ColumnLayout {
+                                Button {
+                                    text: "Quit"
+                                    font.family: Config.fontFamily
+                                    font.pixelSize: 18
+                                    onClicked: mpris.modelData.quit()
+                                }
                                 RowLayout {
                                     Button {
                                         text: "Stop"
