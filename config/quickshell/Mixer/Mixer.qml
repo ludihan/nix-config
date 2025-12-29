@@ -4,6 +4,7 @@ import QtQuick.Layouts
 import Quickshell
 import Quickshell.Services.Pipewire
 import Quickshell.Wayland
+import Quickshell.Services.Mpris
 import qs
 
 PanelWindow {
@@ -49,6 +50,74 @@ PanelWindow {
                     // Each link group contains a source and a target.
                     // Since the target is the default sink, we want the source.
                     node: modelData.source
+                }
+            }
+
+            Rectangle {
+                Layout.fillWidth: true
+                color: Config.muted
+                implicitHeight: 1
+            }
+
+            Repeater {
+                model: Mpris.players
+
+                Rectangle {
+                    id: mpris
+                    required property MprisPlayer modelData
+                    ColumnLayout {
+                        RowLayout {
+                            Label {
+                                color: "#FFFFFF"
+                                font.family: Config.fontFamily
+                                font.pixelSize: 18
+                                elide: Text.ElideRight
+                                Layout.minimumWidth: 695
+                                text: [mpris.modelData.identity || "Unkown Application", mpris.modelData.trackArtists || "Unknown Artists", mpris.modelData.trackTitle || "Unknown Track", mpris.modelData.trackAlbum || "Unknown Album",].join(" - ")
+                            }
+                            Button {
+                                text: "Quit"
+                                font.family: Config.fontFamily
+                                font.pixelSize: 18
+                                onClicked: mpris.modelData.quit()
+                            }
+                        }
+                        RowLayout {
+                            Image {
+                                Layout.maximumWidth: 250
+                                Layout.maximumHeight: 250
+                                source: mpris.modelData.trackArtUrl
+                            }
+                            ColumnLayout {
+                                RowLayout {
+                                    Button {
+                                        text: "Stop"
+                                        font.family: Config.fontFamily
+                                        font.pixelSize: 18
+                                        onClicked: mpris.modelData.stop()
+                                    }
+                                    Button {
+                                        text: "Previous"
+                                        font.family: Config.fontFamily
+                                        font.pixelSize: 18
+                                        onClicked: mpris.modelData.previous()
+                                    }
+                                    Button {
+                                        text: "Pause/Play"
+                                        font.family: Config.fontFamily
+                                        font.pixelSize: 18
+                                        onClicked: mpris.modelData.togglePlaying()
+                                    }
+                                    Button {
+                                        text: "Next"
+                                        font.family: Config.fontFamily
+                                        font.pixelSize: 18
+                                        onClicked: mpris.modelData.next()
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
