@@ -78,16 +78,26 @@ PanelWindow {
                         }
                         RowLayout {
                             Image {
+                                id: art
+                                property bool showArt: true
                                 Layout.maximumWidth: 250
                                 Layout.maximumHeight: 250
-                                source: mpris.modelData.trackArtUrl
+                                source: showArt ? mpris.modelData.trackArtUrl : ""
                             }
                             ColumnLayout {
-                                Button {
-                                    text: "Quit"
-                                    font.family: Config.fontFamily
-                                    font.pixelSize: 18
-                                    onClicked: mpris.modelData.quit()
+                                RowLayout {
+                                    Button {
+                                        text: "Quit"
+                                        font.family: Config.fontFamily
+                                        font.pixelSize: 18
+                                        onClicked: mpris.modelData.quit()
+                                    }
+                                    Button {
+                                        text: "Show album art"
+                                        font.family: Config.fontFamily
+                                        font.pixelSize: 18
+                                        onClicked: art.showArt = !art.showArt
+                                    }
                                 }
                                 RowLayout {
                                     Button {
