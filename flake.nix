@@ -37,12 +37,12 @@
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
-
+      flakeLocation = "/home/ludihan/.nixos-config";
       hmBase =
         hostPath:
         home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
-          extraSpecialArgs = { inherit inputs; };
+          extraSpecialArgs = { inherit inputs flakeLocation; };
           modules = [
             hostPath
             nix-index-database.homeModules.nix-index
@@ -52,7 +52,7 @@
       noBase =
         hostPath:
         nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs; };
+          specialArgs = { inherit inputs flakeLocation; };
           modules = [
             hostPath
             inputs.musnix.nixosModules.musnix

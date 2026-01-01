@@ -2,6 +2,7 @@
   config,
   pkgs,
   inputs,
+  flakeLocation,
   ...
 }:
 {
@@ -374,7 +375,7 @@
 
   programs.nh = {
     enable = true;
-    flake = "${config.home.homeDirectory}/.nix-config";
+    flake = flakeLocation;
   };
 
   xdg = {
@@ -382,7 +383,7 @@
     configFile =
       let
         link =
-          name: config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.nix-config/config/${name}";
+          name: config.lib.file.mkOutOfStoreSymlink "${flakeLocation}/config/${name}";
       in
       {
         nvim.source = link "nvim";
