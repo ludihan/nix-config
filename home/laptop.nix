@@ -1,7 +1,7 @@
 { lib, ... }:
 {
   imports = [
-    ../common/home.nix
+    ./default.nix
   ];
   xdg.configFile."niri/config.kdl".text = lib.mkAfter ''
     input {

@@ -61,13 +61,13 @@
     in
     {
       nixosConfigurations = {
-        "nixos-desktop" = noBase ./hosts/desktop/configuration.nix;
-        "nixos-laptop" = noBase ./hosts/laptop/configuration.nix;
+        "nixos-desktop" = noBase ./nixos/desktop.nix;
+        "nixos-laptop" = noBase ./nixos/laptop.nix;
       };
 
       homeConfigurations = {
-        "ludihan@nixos-desktop" = hmBase ./hosts/desktop/home.nix;
-        "ludihan@nixos-laptop" = hmBase ./hosts/laptop/home.nix;
+        "ludihan@nixos-desktop" = hmBase ./home/desktop.nix;
+        "ludihan@nixos-laptop" = hmBase ./home/laptop.nix;
       };
 
       templates = inputs.templates;

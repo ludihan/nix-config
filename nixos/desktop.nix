@@ -7,8 +7,8 @@
 }:
 {
   imports = [
-    ../common/configuration.nix
-    ./hardware-configuration.nix
+    ./default.nix
+    ../hardware/desktop.nix
   ];
   networking.hostName = lib.mkForce "nixos-desktop";
 }
