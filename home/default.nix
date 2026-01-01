@@ -218,6 +218,7 @@
     htop
     typst
     tinymist
+    nurl
     inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.todo
   ];
 
