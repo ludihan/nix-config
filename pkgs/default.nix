@@ -11,5 +11,5 @@ let
 in
 importPackages [
   "todo"
-  "bookokrat"
+    # "bookokrat"
 ]
