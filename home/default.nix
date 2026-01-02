@@ -192,7 +192,6 @@
     unrar
     zip
     tuxpaint
-    aseprite
     woomer
     xwayland-satellite
     gst_all_1.gst-plugins-good
