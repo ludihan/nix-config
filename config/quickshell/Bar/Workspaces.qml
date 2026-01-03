@@ -140,7 +140,8 @@ Row {
         }
 
         CustomText {
-            text: root.focusedWindow.title ?? ""
+            text: root.focusedWindow.title ? root.focusedWindow.title.length <= 100 ? root.focusedWindow.title : root.focusedWindow.title.slice(0, 100) + "..." : ""
+            anchors.horizontalCenter: parent
         }
     }
 }
