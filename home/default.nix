@@ -218,6 +218,7 @@
     tinymist
     nurl
     nix-init
+    vintagestory
     inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.todo
     # inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.bookokrat
   ];
