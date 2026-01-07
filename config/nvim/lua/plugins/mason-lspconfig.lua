@@ -13,7 +13,8 @@ return {
             "templ",
             -- "ts_ls",
             "vtsls",
-            "vue_ls",
+            -- "vue_ls",
+            "svelte",
             -- "nil_ls",
             "bashls",
             "jsonls",
@@ -21,7 +22,7 @@ return {
             "docker_compose_language_service",
             -- "marksman",
             "yamlls",
-            "omnisharp"
+            -- "omnisharp"
         },
     },
     dependencies = {
