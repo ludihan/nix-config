@@ -2,15 +2,7 @@
   stdenv,
   autoPatchelfHook,
   fetchzip,
-  lib,
-  alsa-lib,
-  libglvnd,
-  libx11,
-  libxi,
   SDL2,
-  libGL,
-  libxrandr,
-  libgcc,
   ...
 }:
 stdenv.mkDerivation (finalAttrs: {
