@@ -72,6 +72,7 @@ PanelWindow {
                             font.pixelSize: 18
                             elide: Text.ElideRight
                             Layout.minimumWidth: 695
+                            Layout.maximumWidth: 695
                             text: [mpris.modelData.identity || "Unkown Application", mpris.modelData.trackArtists || "Unknown Artists", mpris.modelData.trackTitle || "Unknown Track", mpris.modelData.trackAlbum || "Unknown Album",].join(" - ")
                         }
                     }

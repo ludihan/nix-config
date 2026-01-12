@@ -140,8 +140,14 @@ Row {
         }
 
         CustomText {
-            text: root.focusedWindow.title ? root.focusedWindow.title.length <= 100 ? root.focusedWindow.title : root.focusedWindow.title.slice(0, 100) + "..." : ""
-            anchors.horizontalCenter: parent
+            text: root.focusedWindow.title
+            Layout.preferredHeight: 22
+            Layout.fillWidth: true
+            Layout.maximumWidth: 1000
+            verticalAlignment: Text.AlignVCenter
+            clip: true
+            elide: Text.ElideRight
+            Layout.alignment: Qt.AlignVCenter
         }
     }
 }
