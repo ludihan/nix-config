@@ -219,7 +219,7 @@
     nurl
     nix-init
     vintagestory
-    heroic
+    lutris
     quickemu
     inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.todo
     inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.pixilang
