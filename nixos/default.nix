@@ -172,9 +172,10 @@
 
   programs.steam = {
     enable = true;
-    gamescopeSession.enable = true;
+    # gamescopeSession.enable = true;
   };
-  programs.gamemode.enable = true;
+  # programs.gamescope.enable = true;
+  # programs.gamemode.enable = true;
   hardware.graphics.enable = true;
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidia = {
